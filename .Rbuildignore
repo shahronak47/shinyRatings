@@ -1,2 +1,4 @@
 ^LICENSE\.md$
 shinyRatings\.Rproj
+^.*\.Rproj$
+^\.Rproj\.user$

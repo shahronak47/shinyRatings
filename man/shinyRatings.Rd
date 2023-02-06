@@ -17,3 +17,20 @@ Ratings to be added to UI definition
 \description{
 Include ratings in shiny UI
 }
+\examples{
+if(interactive()){
+ library(shiny)
+ library(shinyRatings)
+
+  ui <- fluidPage(
+   shinyRatings()
+  )
+
+ server <- function(input, output, session) {
+ 
+ }
+
+ shinyApp(ui, server)
+}
+
+}
