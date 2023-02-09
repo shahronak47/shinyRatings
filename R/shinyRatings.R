@@ -1,7 +1,6 @@
 #' Include ratings in shiny UI
 #'
 #' @param inputId The input slot that will be used to access the value of number of stars.
-#' @param label Display label on top of ratings stars
 #'
 #' @return Ratings to be added to UI definition
 #' @examples 
@@ -9,36 +8,38 @@
 #'  library(shiny)
 #'  library(shinyRatings)
 #'
-#'   ui <- fluidPage(
-#'    shinyRatings()
-#'   )
+#' ui <- fluidPage(
+#'   shinyRatings('star'), 
+#'   textOutput('text')
+#' )
 #'
-#'  server <- function(input, output, session) {
-#'  
-#'  }
+#' server <- function(input, output, session) {
+#'    output$text <- renderText({paste("This is a random text", input$star)})
+#' }
 #'
-#'  shinyApp(ui, server)
+#' shinyApp(ui, server)
 #' }
 #' 
 #' @export
 #'
-shinyRatings <- function(inputId, label) {
+shinyRatings <- function(inputId) {
   htmltools::tags$html(
     htmltools::tags$head(
       htmltools::tags$link(type = "text/css", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel = "stylesheet"),
-      htmltools::tags$link(type = "text/css", href = "files/style.css", rel = "stylesheet")
+      htmltools::tags$link(type = "text/css", href = "files/style.css", rel = "stylesheet"), 
+      htmltools::tags$script(src="files/shinyRatingsBinding.js"),
     ),
     htmltools::tags$body(
-      htmltools::HTML(ratings_func())
+      htmltools::HTML(ratings_func(inputId))
     )
   )
 }
 
-
 #' @noRd
-ratings_func <- function() {
+ratings_func <- function(inputId) {
+  sprintf(
   '
-  <div id="half-stars-example">
+  <div id="%s", class = "shinyRatings">
     <div class="rating-group">
       <input class="rating__input rating__input--none" checked name="rating2" id="rating2-0" value="0" type="radio">
         <label aria-label="0 stars" class="rating__label" for="rating2-0">&nbsp;</label>
@@ -67,5 +68,5 @@ ratings_func <- function() {
                                                     Space on left side to select 0 stars</p>
                                                     </div>
                                                                                   
-  '
+  ', inputId)
 }

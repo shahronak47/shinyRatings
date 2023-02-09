@@ -4,12 +4,10 @@
 \alias{shinyRatings}
 \title{Include ratings in shiny UI}
 \usage{
-shinyRatings(inputId, label)
+shinyRatings(inputId)
 }
 \arguments{
 \item{inputId}{The input slot that will be used to access the value of number of stars.}
-
-\item{label}{Display label on top of ratings stars}
 }
 \value{
 Ratings to be added to UI definition
@@ -22,15 +20,16 @@ if(interactive()){
  library(shiny)
  library(shinyRatings)
 
-  ui <- fluidPage(
-   shinyRatings()
-  )
+ui <- fluidPage(
+  shinyRatings('star'), 
+  textOutput('text')
+)
 
- server <- function(input, output, session) {
- 
- }
+server <- function(input, output, session) {
+   output$text <- renderText({paste("This is a random text", input$star)})
+}
 
- shinyApp(ui, server)
+shinyApp(ui, server)
 }
 
 }
