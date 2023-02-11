@@ -30,18 +30,18 @@ shinyRatings <- function(inputId) {
       htmltools::tags$script(src="files/shinyRatingsBinding.js"),
     ),
     htmltools::tags$body(
-      htmltools::HTML(ratings_func(inputId))
+      shiny::div(id = inputId, class = "shinyRatings", 
+                 htmltools::HTML(ratings_html())
+                )
     )
   )
 }
 
 #' @noRd
-ratings_func <- function(inputId) {
-  sprintf(
+ratings_html <- function() {
   '
-  <div id="%s", class = "shinyRatings">
     <div class="rating-group">
-      <input class="rating__input rating__input--none" checked name="rating2" id="rating2-0" value="0" type="radio">
+      <input class="rating__input rating__input--none" name="rating2" id="rating2-0" value="0" type="radio">
         <label aria-label="0 stars" class="rating__label" for="rating2-0">&nbsp;</label>
           <label aria-label="0.5 stars" class="rating__label rating__label--half" for="rating2-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
             <input class="rating__input" name="rating2" id="rating2-05" value="0.5" type="radio">
@@ -52,7 +52,7 @@ ratings_func <- function(inputId) {
                       <label aria-label="2 stars" class="rating__label" for="rating2-20"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
                         <input class="rating__input" name="rating2" id="rating2-20" value="2" type="radio">
                           <label aria-label="2.5 stars" class="rating__label rating__label--half" for="rating2-25"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
-                            <input class="rating__input" name="rating2" id="rating2-25" value="2.5" type="radio" checked>
+                            <input class="rating__input" name="rating2" id="rating2-25" value="2.5" type="radio">
                               <label aria-label="3 stars" class="rating__label" for="rating2-30"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
                                 <input class="rating__input" name="rating2" id="rating2-30" value="3" type="radio">
                                   <label aria-label="3.5 stars" class="rating__label rating__label--half" for="rating2-35"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
@@ -63,10 +63,5 @@ ratings_func <- function(inputId) {
                                             <input class="rating__input" name="rating2" id="rating2-45" value="4.5" type="radio">
                                               <label aria-label="5 stars" class="rating__label" for="rating2-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
                                                 <input class="rating__input" name="rating2" id="rating2-50" value="5" type="radio">
-                                                  </div>
-                                                  <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem">Half stars<br/>
-                                                    Space on left side to select 0 stars</p>
-                                                    </div>
-                                                                                  
-  ', inputId)
+                                                  </div>'
 }
