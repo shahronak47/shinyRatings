@@ -14,7 +14,7 @@
 #' )
 #'
 #' server <- function(input, output, session) {
-#'    output$text <- renderText({paste("This is a random text", input$star)})
+#'    output$text <- renderText({paste("No. of stars : ", input$star)})
 #' }
 #'
 #' shinyApp(ui, server)
