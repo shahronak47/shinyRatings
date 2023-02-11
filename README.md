@@ -7,12 +7,12 @@ library(shiny)
 library(shinyRatings)
 
 ui <- fluidPage(
-  shinyRatings('abc'), 
+  shinyRatings('star'), 
   textOutput('text')
 )
 
 server <- function(input, output, session) {
-  output$text <- renderText({paste("No. of stars : ", input$abc)})
+  output$text <- renderText({paste("No. of stars : ", input$star)})
 }
 
 shinyApp(ui, server)
