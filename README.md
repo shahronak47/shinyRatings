@@ -17,3 +17,15 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+![Output](man/figures/output.gif)
+
+---
+
+# Installation
+
+To install the package you can use -
+
+```
+devtools::install_github('shahronak47/shinyRatings')
+```
