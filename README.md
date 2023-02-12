@@ -1,6 +1,7 @@
 # shinyRatings
 
- [![R-CMD-check](https://github.com/shahronak47/shinyRatings/workflows/R-CMD-check/badge.svg)](https://github.com/shahronak47/shinyRatings/actions)
+ [![pkgdown](https://github.com/shahronak47/shinyRatings/workflows/R-CMD-check/badge.svg)](https://github.com/shahronak47/shinyRatings/actions)
+[![R-CMD-check](https://github.com/shahronak47/shinyRatings/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/shahronak47/shinyRatings/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/shahronak47/shinyRatings/branch/master/graph/badge.svg)](https://codecov.io/gh/shahronak47/shinyRatings?branch=master)
 
 Have you ever needed a way to review things in `shiny` ? Look no further, as `shinyRatings` package is built to make this process very easy. It is also possible to give 1/2 stars. 
