@@ -1,6 +1,6 @@
 # shinyRatings
 
- [![pkgdown](https://github.com/shahronak47/shinyRatings/workflows/R-CMD-check/badge.svg)](https://github.com/shahronak47/shinyRatings/actions)
+ [![pkgdown](https://github.com/shahronak47/shinyRatings/workflows/pkgdown/badge.svg)](https://github.com/shahronak47/shinyRatings/actions)
 [![R-CMD-check](https://github.com/shahronak47/shinyRatings/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/shahronak47/shinyRatings/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/shahronak47/shinyRatings/branch/master/graph/badge.svg)](https://codecov.io/gh/shahronak47/shinyRatings?branch=master)
 
