@@ -3,3 +3,4 @@ shinyRatings\.Rproj
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^codecov\.yml$
+^\.github$
