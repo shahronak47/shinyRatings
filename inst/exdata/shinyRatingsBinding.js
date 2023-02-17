@@ -14,6 +14,9 @@ $.extend(shinyRatingsInputBinding, {
           rate_value = parseFloat($(this).val());
       }
     });
+    if (rate_value == 0) {
+      rate_value = 5;
+    }
     return(rate_value)
   },
 
