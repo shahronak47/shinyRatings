@@ -82,8 +82,3 @@
 .rating__input--none:hover + .rating__label .rating__icon--none {
   color: red;
 }
-
-body {
-  padding: 1rem;
-  text-align: center;
-}
