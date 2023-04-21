@@ -24,6 +24,7 @@
 #' @export
 #'
 shinyRatings <- function(inputId, no_of_stars = 5) {
+  initialise_value(session, inputId, no_of_stars)
   htmltools::tags$html(
     htmltools::tags$head(
       htmltools::tags$link(type = "text/css", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel = "stylesheet"),
@@ -55,4 +56,15 @@ ratings_html <- function(n) {
     ), collapse = '')
   
   sprintf('<div class="rating-group">%s</div>', dynamic_html)
+}
+
+#' @noRd
+initialise_value <- function(session, inputId, n) {
+  session$sendInputMessage(
+    inputId = inputId,
+    message = list(
+      type = "initiate",
+      value = n
+    )
+  )
 }

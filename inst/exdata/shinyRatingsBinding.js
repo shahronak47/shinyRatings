@@ -14,16 +14,18 @@ $.extend(shinyRatingsInputBinding, {
           rate_value = parseFloat($(this).val());
       }
     });
-    if (rate_value == 0) {
-      rate_value = 5;
-    }
     return(rate_value)
   },
 
   setValue: function(el, value) {
     el.value = value;
   },
-
+  
+  receiveInputMessage = function(el, message) {
+                    if (message.type === 'initiate') {
+                        $(el).value = data.value
+                    }
+  },
   subscribe: function(el, callback) {
     $(el).on('change.shinyRatings', function(event) {
          callback(false);
