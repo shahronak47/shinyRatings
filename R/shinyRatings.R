@@ -1,7 +1,7 @@
 #' Include ratings in shiny UI
 #'
 #' @param inputId The input slot that will be used to access the value of number of stars.
-#'
+#' @param disable default (FALSE). Do you want to disable the input?
 #' @return Ratings to be added to UI definition
 #' @examples 
 #' if(interactive()){
@@ -22,7 +22,9 @@
 #' 
 #' @export
 #'
-shinyRatings <- function(inputId) {
+shinyRatings <- function(inputId, disable = FALSE) {
+  stopifnot(length(disable) == 1, is.logical(disable))
+  
   htmltools::tags$html(
     htmltools::tags$head(
       htmltools::tags$link(type = "text/css", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel = "stylesheet"),
@@ -30,11 +32,22 @@ shinyRatings <- function(inputId) {
       htmltools::tags$script(src="files/shinyRatingsBinding.js"),
     ),
     htmltools::tags$body(
-      shiny::div(id = inputId, class = "shinyRatings", 
+      shiny::div(id = inputId, class = "shinyRatings", style = if(isTRUE(disable)) "pointer-events:none",
                  htmltools::HTML(ratings_html())
                 )
     )
   )
+}
+
+#' Change the value of star ratings on the client
+#'
+#' @param session The session object passed to function in the server.
+#' @inheritParams shinyRatings
+#'
+#' @export
+#'
+updateShinyRatings <- function(session, inputId, disable = FALSE) {
+  session$sendInputMessage(inputId, disable)
 }
 
 #' @noRd

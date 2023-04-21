@@ -35,6 +35,19 @@ $.extend(shinyRatingsInputBinding, {
   unsubscribe: function(el) {
     $(el).off(".shinyRatings");
   }
+  
+  receiveMessage: function(el, data) {
+    console.log("\nupdate values\n");
+    console.log(el);
+    console.log(data);
+    if (data.hasOwnProperty('value'))
+      this.setValue(el, data.value);
+
+    if (data.hasOwnProperty('label'))
+      $(el).parent().find('label[for="' + $escape(el.id) + '"]').text(data.label);
+
+    $(el).trigger('change');
+  }
 
 });
 
