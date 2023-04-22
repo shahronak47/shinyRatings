@@ -21,11 +21,6 @@ $.extend(shinyRatingsInputBinding, {
     el.value = value;
   },
   
-  receiveInputMessage = function(el, message) {
-                    if (message.type === 'initiate') {
-                        $(el).value = data.value
-                    }
-  },
   subscribe: function(el, callback) {
     $(el).on('change.shinyRatings', function(event) {
          callback(false);
