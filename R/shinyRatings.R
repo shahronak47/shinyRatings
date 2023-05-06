@@ -26,6 +26,7 @@
 #'
 shinyRatings <- function(inputId, no_of_stars = 5, default = no_of_stars) {
   do_checks(no_of_stars, default)
+  # Since in HTML 2 check box constitute of 1 star
   calculate_def <- default * 2
   htmltools::tags$html(
     htmltools::tags$head(
@@ -64,6 +65,8 @@ ratings_html <- function(n) {
 do_checks <- function(no_of_stars, default) {
   # no_of_stars should be a whole number or should end with .5
   stopifnot("no_of_stars can be a whole number or a number ending with .5" = no_of_stars %% 1 %in% c(0, .5))
+  # default value should be a whole number or should end with .5
   stopifnot("default value can be a whole number or a number ending with .5" = default %% 1 %in% c(0, .5))
+  # default value should not be greater than no_of_stars
   stopifnot("default value can be greater than 0 and less than `no_of_stars`" = default > 0 && default <= no_of_stars)
 }
