@@ -24,6 +24,8 @@
 #' @export
 #'
 shinyRatings <- function(inputId, no_of_stars = 5) {
+  stopifnot("no_of_stars can be a whole number or a number ending with .5" = no_of_stars %% 1 %in% c(0, .5))
+  
   htmltools::tags$html(
     htmltools::tags$head(
       htmltools::tags$link(type = "text/css", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel = "stylesheet"),

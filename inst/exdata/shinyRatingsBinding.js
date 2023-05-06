@@ -7,6 +7,12 @@ $.extend(shinyRatingsInputBinding, {
     return $(scope).find(".shinyRatings");
   },
 
+  initialize: function(el){
+    $(el).find("input").each(function(inputitem){
+        $(this).prop("checked", "true");
+    });
+  },
+  
   getValue: function(el) {
     var rate_value = 0;
     $(el).find("input").each(function(inputitem){
