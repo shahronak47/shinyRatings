@@ -8,8 +8,14 @@ $.extend(shinyRatingsInputBinding, {
   },
 
   initialize: function(el){
+    var data = JSON.parse(el.getAttribute('data'));
+    var n = data.n;
+    var count = 0
     $(el).find("input").each(function(inputitem){
-        $(this).prop("checked", "true");
+        count = count + 1
+        if(count <= n) {
+        $(this).prop("checked", "true");  
+        }
     });
   },
   
