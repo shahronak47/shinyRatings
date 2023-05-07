@@ -1,5 +1,6 @@
 # shinyRatings 0.0.2
 
+* Add a disabled argument in `shinyRatings` function. 
 * [Allow possibility of variable number of stars](https://github.com/shahronak47/shinyRatings/issues/9)
 * [Add default value of starts selected](https://github.com/shahronak47/shinyRatings/issues/9)
 

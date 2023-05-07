@@ -4,7 +4,7 @@
 \alias{shinyRatings}
 \title{Include ratings in shiny UI}
 \usage{
-shinyRatings(inputId, no_of_stars = 5, default = no_of_stars)
+shinyRatings(inputId, no_of_stars = 5, default = no_of_stars, disabled = FALSE)
 }
 \arguments{
 \item{inputId}{The input slot that will be used to access the value of number of stars.}
@@ -12,6 +12,8 @@ shinyRatings(inputId, no_of_stars = 5, default = no_of_stars)
 \item{no_of_stars}{Number of stars that you want to display on the UI.}
 
 \item{default}{Number of stars selected by default.}
+
+\item{disabled}{Keep number of stars as fixed? Disable the option of changing values}
 }
 \value{
 Ratings to be added to UI definition
