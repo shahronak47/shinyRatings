@@ -51,13 +51,12 @@ ratings_html <- function(n, disabled, inputId) {
   
   dynamic_html <- paste0(
     sprintf(
-      '<label aria-label="%s stars" class="rating__label rating__label--half" for="rating2-%s"><i class="rating__icon--star fa fa-star-half"></i></label>
-     <input class="rating__input" name="rating2-%s" id="rating2-%s" value="%s" type="radio">
-     <label aria-label="%s star" class="rating__label" for="rating2-%s"><i class="rating__icon--star fa fa-star"></i></label>
-     <input class="rating__input" name="rating2-%s" id="rating2-%s" value="%s" type="radio">',
-      half_num, half_num_chr, inputId, half_num_chr, half_num, full_num, full_num_chr, inputId, full_num_chr, full_num
+      '<label aria-label="%s stars" class="rating__label rating__label--half" for="%s-%s"><i class="rating__icon--star fa fa-star-half"></i></label>
+     <input class="rating__input" name="%s" id="%s-%s" value="%s" type="radio">
+     <label aria-label="%s star" class="rating__label" for="%s-%s"><i class="rating__icon--star fa fa-star"></i></label>
+     <input class="rating__input" name="%s" id="%s-%s" value="%s" type="radio">',
+      half_num, inputId, half_num_chr, inputId, inputId, half_num_chr, half_num, full_num, inputId, full_num_chr, inputId, inputId, full_num_chr, full_num
     ), collapse = '')
-  
   
   if(isTRUE(disabled)) {
     # Add disabled attribute to input elements
