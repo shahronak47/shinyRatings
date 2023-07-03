@@ -11,7 +11,6 @@ $.extend(shinyRatingsInputBinding, {
     /* Get default value */
     var data = JSON.parse(el.getAttribute('data'));
     var n = data.n;
-    console.log(n);
     /* Manually set the check property to TRUE for default number of stars */
     var count = 0
     $(el).find("input").each(function(inputitem){
