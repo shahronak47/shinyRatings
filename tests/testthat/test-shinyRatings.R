@@ -5,7 +5,7 @@ test_that("shinyRatings works", {
 })
 
 test_that("ratings_html works", {
-  res <- ratings_html(5, disabled = FALSE)
+  res <- ratings_html(5, disabled = FALSE, "abc")
   expect_type(res, 'character')
   expect_s3_class(htmltools::HTML(res), 'html')
 })

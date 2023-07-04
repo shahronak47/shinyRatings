@@ -16,7 +16,7 @@ $.extend(shinyRatingsInputBinding, {
     $(el).find("input").each(function(inputitem){
         count = count + 1
         if(count <= n) {
-        $(this).prop("checked", "true");  
+        $(this).prop("checked", true);  
         }
     });
   },
