@@ -7,3 +7,5 @@ shinyRatings\.Rproj
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^README\.md$
+^NEWS\.md$
