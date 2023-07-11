@@ -31,7 +31,7 @@ shinyApp(ui, server)
 
 # Installation
 
-To install the package you can use -
+To install the package from GitHub, you can use - 
 
 ```
 devtools::install_github('shahronak47/shinyRatings')

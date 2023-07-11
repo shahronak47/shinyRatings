@@ -1,8 +1,10 @@
 Package: shinyRatings
-Title: An Intuitive Way of Providing Star Rating on a Shiny App
+Title: An Intuitive Way of Providing Star Rating in a Shiny App
 Version: 0.1.0
 Authors@R: person("Ronak", "Shah", , "shahronak47@yahoo.in", role = c("aut", "cre"))
-Description: An intuitive way of providing star rating on a shiny app.
+Description: A simple interface to integrate star ratings into your Shiny apps. 
+             It can be used for customer feedback systems, user reviews, or any application that requires user ratings. 
+             shinyRatings offers a straightforward and customizable solution that enhances user engagement and facilitates valuable feedback collection.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
