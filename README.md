@@ -31,6 +31,12 @@ shinyApp(ui, server)
 
 # Installation
 
+`shinyRatings` is available on CRAN and can be installed using - 
+
+```
+install.packages("shinyRatings")
+```
+
 To install the package from GitHub, you can use - 
 
 ```
