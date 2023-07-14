@@ -1,3 +1,7 @@
+# shinyRatings 0.1.0
+
+- [Make package ready for CRAN submission.](#17)
+
 # shinyRatings 0.0.3
 
 -   [Add more than 1 shinyRating without disturbing each other](#15)
