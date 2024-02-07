@@ -58,11 +58,7 @@ ratings_html <- function(n, disabled, inputId) {
       half_num, inputId, half_num_chr, inputId, inputId, half_num_chr, half_num, full_num, inputId, full_num_chr, inputId, inputId, full_num_chr, full_num
     ), collapse = '')
   
-  if(isTRUE(disabled)) {
-    # Add disabled attribute to input elements
-    dynamic_html <- gsub('<input', '<input disabled', dynamic_html, fixed = TRUE)
-  }
-  sprintf('<div class="rating-group">%s</div>', dynamic_html)
+  sprintf('<div class="rating-group" %s>%s</div>', if(disabled) 'style = "pointer-events: none;"' else '', dynamic_html)
 }
 
 #' @noRd

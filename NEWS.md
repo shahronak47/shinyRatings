@@ -1,3 +1,7 @@
+# shinyRatings 0.1.1
+
+- [Disable interactivity when `disabled = TRUE`](#20)
+
 # shinyRatings 0.1.0
 
 - [Make package ready for CRAN submission.](#17)
